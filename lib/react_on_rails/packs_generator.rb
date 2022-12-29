@@ -106,6 +106,9 @@ module ReactOnRails
         import "./#{relative_path_to_generated_server_bundle}"\n
       FILE_CONTENT
 
+      FileUtils.mkdir_p(File.dirname(defined_server_bundle_file_path))
+      FileUtils.touch(defined_server_bundle_file_path)
+
       prepend_to_file_if_not_present(defined_server_bundle_file_path, content)
     end
 
