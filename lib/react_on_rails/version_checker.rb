@@ -62,6 +62,8 @@ module ReactOnRails
     end
 
     def gem_major_minor_patch_version
+      return "13.3.2" # TMP
+
       match = gem_version.match(MAJOR_MINOR_PATCH_VERSION_REGEX)
       [match[1], match[2], match[3]]
     end
@@ -100,6 +102,7 @@ module ReactOnRails
       end
 
       def major_minor_patch
+        return "13.3.2" # TMP
         return if relative_path?
 
         match = raw.match(MAJOR_MINOR_PATCH_VERSION_REGEX)
